@@ -7,8 +7,8 @@
     Bonus points if you want to have internship at AI Camp
     1. How can we save what user built? And if we can save them, like allow them to publish, can we load the saved results back on the home page? 
     2. Can you add a button for each generated item at the frontend to just allow that item to be added to the story that the user is building? 
-    3. What other features you'd like to develop to help AI write better with a user? 
-    4. How to speed up the model run? Quantize the model? Using a GPU to run the model? 
+    3. What other features you'd like to develop to help AI write better with a user?
+    4. How to speed up the model run? Quantize the model? Using a GPU to run the model?
 """
 
 # import basics
@@ -17,6 +17,7 @@ import os
 # import stuff for our web server
 from flask import Flask, request, redirect, url_for, render_template, session
 from utils import get_base_url
+from markupsafe import Markup
 # import stuff for our models
 from aitextgen import aitextgen
 
@@ -25,6 +26,8 @@ from aitextgen import aitextgen
 #                tokenizer_file="model/aitextgen.tokenizer.json", to_gpu=False)
 
 ai = aitextgen(model="distilgpt2", to_gpu=False)
+
+
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
@@ -42,10 +45,21 @@ app.secret_key = os.urandom(64)
 
 # set up the routes and logic for the webserver
 
+story_genre = ''
+def genre_text_generation(genre_type):
+    if genre_type == 'Horror':
+        file_dest = 'model/horror'
+    if genre_type == 'Dad Jokes':
+        file_dest = 'model/dadjokes'
+    if genre_type == 'Drama':
+        file_dest = 'model/drama'
+    if genre_type == 'Poetry':
+        file_dest = 'model/poetry'
+    return file_dest
 
 @app.route(f'{base_url}')
 def home():
-    return render_template('writer_home.html', generated=None)
+    return render_template('index.html', ans=None)
 
 
 @app.route(f'{base_url}', methods=['POST'])
@@ -53,46 +67,94 @@ def home_post():
     return redirect(url_for('results'))
 
 
-@app.route(f'{base_url}/results/')
+@app.route(f'{base_url}/results')
 def results():
     if 'data' in session:
         data = session['data']
-        return render_template('Write-your-story-with-AI.html', generated=data)
+        print(data)
+        return render_template('index.html', generated=data)
     else:
-        return render_template('Write-your-story-with-AI.html', generated=None)
+        return render_template('index.html', generated=None)
+
 
 
 @app.route(f'{base_url}/generate_text/', methods=["POST"])
 def generate_text():
     """
-    view function that will return json response for generated text. 
+    view function that will return json response for generated text.
     """
-
     prompt = request.form['prompt']
+    genre_type = request.form['genre']
+    print("genre", genre_type, "prompt", prompt)
+    story_genre = genre_text_generation(genre_type)
+    ai = aitextgen(model_folder = story_genre, to_gpu=False)
     if prompt is not None:
-        generated = ai.generate(
-            n=1,
-            batch_size=3,
-            prompt=str(prompt),
-            max_length=300,
-            temperature=0.9,
-            return_as_list=True
-        )
+        if genre_type == "Dad Jokes":
+            generated = ai.generate(
+                n=1,
+                batch_size=3,
+                prompt=str(prompt),
+                max_length=20,
+                temperature=0.9,
+                return_as_list=True
+            )
+        elif genre_type == "Horror":
+            generated = ai.generate(
+                n=1,
+                batch_size=3,
+                prompt=str(prompt),
+                max_length=400,
+                temperature=0.9,
+                return_as_list=True
+            )
+        elif genre_type == "Drama":
+            generated = ai.generate(
+                n=1,
+                batch_size=3,
+                prompt=str(prompt),
+                max_length=400,
+                temperature=0.9,
+                return_as_list=True
+            )
+        elif genre_type == "Poetry":
+            generated = ai.generate(
+                n=1,
+                batch_size=3,
+                prompt=str(prompt),
+                max_length=300,
+                temperature=0.9,
+                return_as_list=True
+            )
+            
+            #print("BEFORE: ",generated)
+            symbols = "! @ # $ % ^ & * ( ) _ - + = { } [ ] ."
+            symbols = symbols.split()
+            result = []
+            article = generated[0]
+            article = article[:]
 
+            for i,c in enumerate(article):
+                if c.isupper() and article[i-1].islower():
+                    result.append("<br>")
+                result.append(c)
+            result = "".join(result)
+            generated[0]= Markup(result)
+
+    #print("AFTER: ",generated)
     data = {'generated_ls': generated}
     session['data'] = generated[0]
     return redirect(url_for('results'))
 
 # define additional routes here
 # for example:
-# @app.route(f'{base_url}/team_members')
+# @app.route(f'{base_url}/about')
 # def team_members():
-#     return render_template('team_members.html') # would need to actually make this page
+#     return render_template('about') # would need to actually make this page
 
 
 if __name__ == '__main__':
     # IMPORTANT: change url to the site where you are editing this file.
-    website_url = 'coding.ai-camp.dev'
+    website_url = 'cocalc20.ai-camp.dev'
 
     print(f'Try to open\n\n    https://{website_url}' + base_url + '\n\n')
     app.run(host='0.0.0.0', port=port, debug=True)

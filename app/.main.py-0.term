@@ -1,0 +1,146 @@
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ (base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ arti l[K[K[Kcc[K[Kiclein[K[K[K[K[K[K[K[K[K/articleinker/app/python3 main.py
+bash: /articleinker/app/python3: No such file or directory
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ a[K/r[Karticleinker/app/main.py
+bash: /articleinker/app/main.py: No such file or directory
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ mainp[K.py
+bash: main.py: command not found
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ python3 m[Kmain.py
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/
+
+
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+[31m   WARNING: This is a development server. Do not use it in a production deployment.[0m
+[2m   Use a production WSGI server instead.[0m
+ * Debug mode: on
+Traceback (most recent call last):
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py", line 141, in <module>
+    app.run(host='0.0.0.0', port=port, debug=True)
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/miniconda3/lib/python3.9/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/miniconda3/lib/python3.9/site-packages/werkzeug/serving.py", line 1030, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ (base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ n[Kpython3 main.py
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/10000/
+
+
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+[31m   WARNING: This is a development server. Do not use it in a production deployment.[0m
+[2m   Use a production WSGI server instead.[0m
+ * Debug mode: on
+Traceback (most recent call last):
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py", line 147, in <module>
+    app.run(host='0.0.0.0', port=port, debug=True)
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/miniconda3/lib/python3.9/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/miniconda3/lib/python3.9/site-packages/werkzeug/serving.py", line 1030, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ (base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ clear
+[H[J(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ python3 main.py
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/
+
+
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+[31m   WARNING: This is a development server. Do not use it in a production deployment.[0m
+[2m   Use a production WSGI server instead.[0m
+ * Debug mode: on
+ * Running on http://0.0.0.0:12345/ (Press CTRL+C to quit)
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+127.0.0.1 - - [22/Jun/2022 21:03:11] "[37mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/ HTTP/1.1[0m" 200 -
+127.0.0.1 - - [22/Jun/2022 21:03:11] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/facebook.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:03:11] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/busy-project-manager-overwhelmed-by-work.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:03:11] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/twitter.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:03:11] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/github.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:27] "[37mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/ HTTP/1.1[0m" 200 -
+127.0.0.1 - - [22/Jun/2022 21:05:27] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/busy-project-manager-overwhelmed-by-work.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:27] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/facebook.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:27] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/twitter.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:27] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/img/github.svg HTTP/1.1[0m" 404 -
+genreated_text function finish
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[32mPOST /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/generate_text/ HTTP/1.1[0m" 302 -
+result function starts
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[37mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/ HTTP/1.1[0m" 200 -
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/static/css/main.css HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/static/js/script.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/img/busy-project-manager-overwhelmed-by-work.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/img/facebook.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/img/twitter.svg HTTP/1.1[0m" 404 -
+127.0.0.1 - - [22/Jun/2022 21:05:35] "[33mGET /0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12345/results/img/github.svg HTTP/1.1[0m" 404 -
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py', reloading
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12000/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/miniconda3/lib/python3.9/site-packages/markupsafe/_speedups.cpython-39-x86_64-linux-gnu.so', reloading
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12000/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/miniconda3/lib/python3.9/site-packages/markupsafe/_speedups.cpython-39-x86_64-linux-gnu.so', reloading
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12000/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py', reloading
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12000/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py', reloading
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12000/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py', reloading
+ * Restarting with stat
+Try to open
+
+    https://cocalc20.ai-camp.dev/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/port/12000/
+
+
+ * Debugger is active!
+ * Debugger PIN: 996-056-636
+ * Detected change in '/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py', reloading
+ * Restarting with stat
+  File "/projects/0ddeade5-3577-4fe8-8cd6-8a0cb653428e/articleinker/app/main.py", line 103
+    data = session['data']
+IndentationError: unexpected indent
+(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ (base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ [K(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ [K(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ clear
+[H[J(base) ]0;~/articleinker/app[01;34m~/articleinker/app[00m$ cleargit push -u origin maincommit -m "pushed student notebooks"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cecho "/NLP-Notebooks-Summer-2022" >> .gitignore[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add group3/[K2/1/[1PArjun/[1PRyan/Judy/Megan/organ/[2PAlex/[5Ppull
